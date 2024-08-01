@@ -39,8 +39,5 @@ def extract_changes():
     return _parse_changelist(_get_section(content, CHANGES_SECTION))
 
 
-def extract_issue_id(change):
-    matches = re.findall(ISSUE_PATTERN, change)
-    if not matches:
-        return None
-    return matches[0]
+def extract_issue_ids(change):
+    return re.findall(ISSUE_PATTERN, change)
